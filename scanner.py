@@ -60,11 +60,11 @@ if check_button:
 # Gestion des boutons
 col1, col2, col3 = st.columns(3)
 with col1:
-    qr_button = st.button("Générer QR code", key="generate_qrcode", disabled=st.session_state.get("qr_button_disabled", True))
+    qr_button = st.button("Générer QR code", key="generate_qrcode", st.session_state.get("qr_button_disabled", True))
     if qr_button:
         generate_qrcode()
 with col2:
-    connect_button = st.button("Se connecter", key="connect", disabled=st.session_state.get("connect_button_disabled", True))
+    connect_button = st.button("Se connecter", key="connect", st.session_state.get("connect_button_disabled", True))
     if connect_button:
         connect_to_website()
 #with col3:
