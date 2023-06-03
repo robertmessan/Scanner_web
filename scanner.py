@@ -67,5 +67,5 @@ with col2:
     connect_button = st.button("Se connecter", key="connect", disabled=st.session_state.get("connect_button_disabled", True))
     if connect_button:
         connect_to_website()
-#with col3:
-    #st.button("Quitter l'application")
+with col3:
+    st.button("Quitter l'application")
