@@ -1,6 +1,5 @@
 streamlit==0.88.0
 pip==23.1.2
-webbrowser==chrome
 pyqrcode==1.2
 Pillow==8.3.2
 requests==2.26.0
