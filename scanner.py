@@ -69,4 +69,13 @@ with col2:
         connect_to_website()
 #with col3:
     #st.button("Quitter l'application")
+    
+    
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
