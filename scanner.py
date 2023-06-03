@@ -4,7 +4,6 @@ import pyqrcode
 from urllib.parse import urlparse
 import requests
 from PIL import Image
-import png
 
 def check_website_security():
     url = url_input.lower()  # Convertir l'URL en minuscules
