@@ -1,5 +1,11 @@
 streamlit==0.88.0
-webbrowser
-pyqrcode
-Pillow
+webbrowser==0.5.1
+pyqrcode==1.2
+Pillow==8.3.2
+requests==2.26.0
+
+frontend==0.0.3
+
+ipython
 requests
+
