@@ -1,5 +1,6 @@
 import streamlit as st
 import webbrowser
+pip install pyqrcode
 import pyqrcode
 from urllib.parse import urlparse
 import requests
