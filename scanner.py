@@ -55,7 +55,7 @@ root = tk.Tk()
 root.title("Smart scanner")
 
 # Chargement de l'image du logo
-logo_image = Image.open("Mon_logo.png").resize((150, 150))
+logo_image = Image.open("https://github.com/robertmessan/Scanner_web/blob/main/Mon_logo.png").resize((150, 150))
 logo_photo = ImageTk.PhotoImage(logo_image)
 
 # Étiquette pour afficher le logo au niveau du titre
