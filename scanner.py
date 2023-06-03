@@ -62,7 +62,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     qr_button_disabled = st.session_state.get("qr_button_disabled", True)
     if qr_button_disabled:
-        st.button("Générer QR code", key="generate_qrcode", on_click=None)
+        st.button("Générer QR code", key="generate_qrcode", on_click=None, disabled=True)
     else:
         qr_button = st.button("Générer QR code", key="generate_qrcode", on_click=generate_qrcode)
         if qr_button:
@@ -70,10 +70,8 @@ with col1:
 with col2:
     connect_button_disabled = st.session_state.get("connect_button_disabled", True)
     if connect_button_disabled:
-        st.button("Se connecter", key="connect", on_click=None)
+        st.button("Se connecter", key="connect", on_click=None, disabled=True)
     else:
         connect_button = st.button("Se connecter", key="connect", on_click=connect_to_website)
         if connect_button:
             connect_to_website()
-#with col3:
-    #st.button("Quitter l'application")
