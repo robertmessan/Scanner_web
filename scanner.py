@@ -44,7 +44,7 @@ def generate_qrcode():
 def connect_to_website():
     url = url_input.lower()  # Convertir l'URL en minuscules
     webbrowser.open(url)
-
+st.markdown("Réalisé par Robert avec💖")
 st.title("Smart scanner")
 
 # Chargement de l'image du logo
