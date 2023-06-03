@@ -55,12 +55,12 @@ root = tk.Tk()
 root.title("Smart scanner")
 
 # Chargement de l'image du logo
-logo_image = Image.open("https://github.com/robertmessan/Scanner_web/blob/main/Mon_logo.png").resize((150, 150))
-logo_photo = ImageTk.PhotoImage(logo_image)
+#logo_image = Image.open("https://github.com/robertmessan/Scanner_web/blob/main/Mon_logo.png").resize((150, 150))
+#logo_photo = ImageTk.PhotoImage(logo_image)
 
 # Étiquette pour afficher le logo au niveau du titre
-logo_label = tk.Label(root, image=logo_photo)
-logo_label.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
+#logo_label = tk.Label(root, image=logo_photo)
+#logo_label.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 
 # Zone de texte pour l'URL du site web
 url_label = tk.Label(root, text="URL du site web:", font=("Arial", 14, "bold"))
