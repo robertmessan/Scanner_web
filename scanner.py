@@ -26,7 +26,7 @@ def check_website_security():
                 st.session_state.qr_button_disabled = True
                 st.session_state.connect_button_disabled = True
         except requests.exceptions.RequestException:
-            st.error("Nous n'avons pas réussi à analyser ce site! Soit il a déjà été déjà signalé comme faux site web ou hébergé en tant que site personnel!")
+            st.error("Nous n'avons pas réussi à analyser ce site! Soit il a été déjà signalé comme faux site web ou hébergé en tant que site personnel!")
             st.session_state.qr_button_disabled = True
             st.session_state.connect_button_disabled = True
     else:
@@ -42,8 +42,8 @@ def generate_qrcode():
     st.image(qr_code_image)
 
 def connect_to_website():
-    url = url_input.lower()  # Convertir l'URL en minuscules
-    webbrowser.open(url)
+    url1 = url_input.lower()  # Convertir l'URL en minuscules
+    webbrowser.open(url1)
 st.markdown("Réalisé par Robert avec💖")
 st.title("Smart scanner")
 
@@ -64,7 +64,7 @@ with col1:
     if qr_button:
         generate_qrcode()
 with col2:
-    connect_button = st.button("Se connecter", key="connect", disabled=st.session_state.get("connect_button_disabled", True))
+    connect_button = st.button("Réinitialiser", key="connect", disabled=st.session_state.get("connect_button_disabled", True))
     if connect_button:
         connect_to_website()
 #with col3:
