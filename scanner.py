@@ -22,11 +22,11 @@ def check_website_security():
                 st.session_state.qr_button_disabled = False
                 st.session_state.connect_button_disabled = False
             else:
-                st.error("Le site n'existe pas")
+                st.error("Le site n'existe pas!")
                 st.session_state.qr_button_disabled = True
                 st.session_state.connect_button_disabled = True
         except requests.exceptions.RequestException:
-            st.error("Nous n'avons pas réussi à nous connecter au site! Soit il n'existe pas ou a été déjà signalé comme faux site web.")
+            st.error("Nous n'avons pas réussi à analyser ce site! Soit il a déjà été déjà signalé comme faux site web ou hébergé en tant que site personnel!")
             st.session_state.qr_button_disabled = True
             st.session_state.connect_button_disabled = True
     else:
