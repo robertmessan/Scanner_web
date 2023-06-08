@@ -30,7 +30,7 @@ def check_website_security():
             st.session_state.qr_button_disabled = True
             st.session_state.connect_button_disabled = True
     else:
-        st.error("Site non sécurisé!")
+        st.error("Site non sécurisé! veuillez utiliser 'https' à la place de 'http'")
         st.session_state.qr_button_disabled = True
         st.session_state.connect_button_disabled = True
 
