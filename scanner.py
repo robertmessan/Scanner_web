@@ -6,7 +6,7 @@ import requests
 from PIL import Image
 
 def check_website_security():
-    url = site_url.lower()  # Convertir l'URL en minuscules
+    url = url_input.lower()  # Convertir l'URL en minuscules
     parsed_url = urlparse(url)
     if parsed_url.scheme == 'https':
         domain_name = parsed_url.netloc
@@ -65,18 +65,18 @@ def check_website_security():
         st.session_state.security_criterion_4 = False  # Critère de sécurité 4 : Pas de protection contre les attaques de force brute
 
 def generate_qrcode():
-    url = site_url.lower()  # Convertir l'URL en minuscules
+    url = url_input.lower()  # Convertir l'URL en minuscules
     qr = pyqrcode.create(url)
     qr.png("qrcode.png", scale=6)
     qr_code_image = Image.open("qrcode.png")
     st.image(qr_code_image)
 
 def connect_to_website():
-    url1 = site_url.lower()  # Convertir l'URL en minuscules
+    url1 = url_input.lower()  # Convertir l'URL en minuscules
     webbrowser.open(url1)
 
 def login_to_website():
-    url2 = site_url.lower()  # Convertir l'URL en minuscules
+    url2 = url_input.lower()  # Convertir l'URL en minuscules
     webbrowser.open(url2)
 def reset_application():
     st.session_state.qr_button_disabled = True
@@ -86,13 +86,14 @@ def reset_application():
     st.session_state.security_criterion_2 = False
     st.session_state.security_criterion_3 = False
     st.session_state.security_criterion_4 = False
-    st.session_state.site_input = ""
+    st.session_state.url_input = ""
 #----------------------------
 
 st.markdown("Réalisé avec💖par Robert ")
 st.title("Smart scanner")
+
 # Zone de texte pour l'URL du site web
-site_url = st.text_input("URL du site web", value=st.session_state["site_url"])
+url_input = st.text_input("URL du site web")
 
 # Bouton de vérification
 check_button = st.button("Vérifier", key="check")
@@ -106,7 +107,7 @@ with col1:
     if qr_button:
         generate_qrcode()
 with col2:
-    connect_button = st.button("Visiter le site", key="connect", disabled=st.session_state.get("connect_button_disabled", True))
+    connect_button = st.button("Se connecter", key="connect", disabled=st.session_state.get("connect_button_disabled", True))
     if connect_button:
         connect_to_website()
 with col3:
@@ -117,7 +118,6 @@ with col4:
     reset_button = st.button("Réinitialiser", key="reset")
     if reset_button:
         reset_application()
-        site_input=""
 # Autres critères de sécurité
 if st.session_state.get("security_criterion_1", False):
     st.success("Critère de sécurité 1 : Site existant")
