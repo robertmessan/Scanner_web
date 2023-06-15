@@ -145,7 +145,7 @@ st.markdown(
     
     
     Cette application est un prototype d'une application mobile que j'ai développée.
-    ** Elle peut ne pas analyser certains sites. Veuillez ne considérer que des sites déclarés sécurisés avec tous les critères. **
+    **Elle peut ne pas analyser certains sites. Veuillez ne considérer que des sites déclarés sécurisés avec tous les critères.**
     Veuillez noter également que ces critères ne vous rendent pas totalement invulnérable.**Le risque 0 n'existe pas!**
     **Si vous avez des propositions, n'hésitez pas à me contacter.**
     """
