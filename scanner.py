@@ -92,7 +92,7 @@ def reset_application():
 st.markdown("Réalisé avec💖par Robert ")
 st.title("Smart scanner")
 # Zone de texte pour l'URL du site web
-site_url = st.text_input("URL du site web", value=st.session_state.get("site_url", ""))
+site_url = st.text_input("URL du site web", value=st.session_state["site_url"])
 
 # Bouton de vérification
 check_button = st.button("Vérifier", key="check")
