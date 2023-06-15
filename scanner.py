@@ -138,6 +138,10 @@ if st.session_state.get("security_criterion_4", False):
 else:
     st.error("Critère de sécurité 4 : Données interceptables")
 
+st.markdown("Cette application est un prototype d'une application mobile que j'ai développée.")
+st.markdown("** Elle peut ne pas analyser certains sites. Veuillez ne considérer que des sites déclarés sécurisés avec tous les critères. **")
+st.markdown("Veuillez noter également que ces critères ne vous rendent pas totalement invulnérable.**Le risque 0 n'existe pas!**")
+st.markdown("**Si vous avez des propositions, n'hésitez pas à me contacter.**")
     
     
 hide_streamlit_style = """
