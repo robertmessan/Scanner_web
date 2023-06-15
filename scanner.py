@@ -86,8 +86,8 @@ def reset_application():
     st.session_state.security_criterion_2 = False
     st.session_state.security_criterion_3 = False
     st.session_state.security_criterion_4 = False
-    st.text_input = ""
-# Chargement de l'image du logo
+    st.session_state.url_input = ""
+#----------------------------
 
 st.markdown("Réalisé avec💖par Robert ")
 st.title("Smart scanner")
@@ -117,6 +117,7 @@ with col4:
     reset_button = st.button("Réinitialiser", key="reset")
     if reset_button:
         reset_application()
+        url_input=""
 # Autres critères de sécurité
 if st.session_state.get("security_criterion_1", False):
     st.success("Critère de sécurité 1 : Site existant")
@@ -141,10 +142,10 @@ else:
 st.markdown(
     """
     
+    **Important!**
     
     
-    
-    Cette application est un prototype d'une application mobile que j'ai développée.
+    Cette application est un prototype d'une application mobile en cours de développement.
     **Elle peut ne pas analyser certains sites. Veuillez ne considérer que des sites déclarés sécurisés avec tous les critères.**
     Veuillez noter également que ces critères ne vous rendent pas totalement invulnérable.**Le risque 0 n'existe pas!**
     **Si vous avez des propositions, n'hésitez pas à me contacter.**
