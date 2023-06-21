@@ -107,7 +107,7 @@ if check_button:
     check_website_security()
 
 # Gestion des boutons
-col1, col2, col3, col4 = st.columns(4)
+col1, col2, col3 = st.columns(3)
 with col1:
     qr_button = st.button("Générer QR code", key="generate_qrcode", disabled=st.session_state.get("qr_button_disabled", True))
     if qr_button:
@@ -120,10 +120,9 @@ with col3:
     login_button = st.button("Visiter le site sécurisé", key="login", disabled=st.session_state.get("login_button_disabled", True))
     if login_button:
         login_to_website()
-with col4:
-    reset_button = st.button("Réinitialiser", key="reset")
-    if reset_button:
-        reset_application()
+reset_button = st.button("Réinitialiser", key="reset")
+if reset_button:
+    reset_application()
 
 # Autres critères de sécurité
 if st.session_state.get("security_criterion_1", False):
@@ -141,7 +140,7 @@ if st.session_state.get("security_criterion_3", False):
 else:
     st.error("Critère de sécurité 3 : Certificat SSL non valide")
 
-if st.session_state.get("security_criterion_4", False):
+if st.session_state.get("security_criterion_2", False):
     st.success("Critère de sécurité 4 : Données non interceptables")
 else:
     st.error("Critère de sécurité 4 : Données interceptables")
