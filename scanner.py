@@ -93,11 +93,7 @@ def reset_application():
 #----------------------------
 st.markdown('<h1 style="color: green;">Smart scanner</h1>', unsafe_allow_html=True)
 st.markdown('<h2 style="color: purple;">Important🔴</h2>', unsafe_allow_html=True)
-phrasew = """Cette application est un prototype d'une application mobile en cours de développement.**Elle peut ne pas analyser certains sites**.
-
-Veuillez ne considérer que des sites déclarés sécurisés avec tous les critères.Veuillez noter également que ces critères ne vous rendent pas totalement invulnérable.
-
-**Le risque 0 n'existe pas!** Si vous avez des propositions, **n'hésitez pas à me contacter.** 
+phrasew = """Cette application est un prototype d'une application mobile en cours de développement.**Elle peut ne pas analyser certains sites**.Veuillez ne considérer que des sites déclarés sécurisés avec tous les critères.Veuillez noter également que ces critères ne vous rendent pas totalement invulnérable.**Le risque 0 n'existe pas!** Si vous avez des propositions, **n'hésitez pas à me contacter.** 
 """
 st.subheader(phrasew)
  
