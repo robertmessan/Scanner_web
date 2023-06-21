@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit import scripts
 import webbrowser
 import pyqrcode
 from urllib.parse import urlparse
@@ -76,7 +75,7 @@ def generate_qrcode():
 
 def connect_to_website():
     url1 = site_url.lower()  # Convertir l'URL en minuscules
-    scripts("window.open('"+url1+"')")
+    st.scripts("window.open('"+url1+"')")
     #webbrowser.open(url1)
 
 def login_to_website():
