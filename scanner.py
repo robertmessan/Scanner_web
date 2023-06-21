@@ -75,11 +75,11 @@ def generate_qrcode():
 
 def connect_to_website():
     url1 = site_url.lower()  # Convertir l'URL en minuscules
-    webbrowser.open(url1)
+    webbrowser.open(site_url)
 
 def login_to_website():
     url2 = site_url.lower()  # Convertir l'URL en minuscules
-    webbrowser.open(url2)
+    webbrowser.open(site_url)
 
 def reset_application():
     st.session_state.qr_button_disabled = True
@@ -113,7 +113,6 @@ with col1:
     if qr_button:
         generate_qrcode()
 with col2:
-    st.session_state["connect_button_disabled"] = False  # Activer le bouton "Connect"
     connect_button = st.button("Visiter", key="connect", disabled=st.session_state.get("connect_button_disabled", True))
     if connect_button:
         connect_to_website()
