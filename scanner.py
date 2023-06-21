@@ -113,13 +113,11 @@ with col1:
     if qr_button:
         generate_qrcode()
 with col2:
-    connect_button = st.button("Visiter", key="connect", disabled=st.session_state.get("connect_button_disabled", True))
-    if connect_button:
-        connect_to_website()
-
-reset_button = st.button("Réinitialiser", key="reset")
+    reset_button = st.button("Réinitialiser", key="reset")
 if reset_button:
     reset_application()
+
+
 
 # Autres critères de sécurité
 if st.session_state.get("security_criterion_1", False):
