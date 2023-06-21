@@ -65,8 +65,9 @@ def check_website_security():
         st.session_state.security_criterion_3 = False  # Critère de sécurité 3 : Certificat SSL non valide
         st.session_state.security_criterion_4 = False  # Critère de sécurité 4 : Pas de protection contre les attaques de force brute
         
-url = site_url.lower()  # Convertir l'URL en minuscules
+
 def generate_qrcode():
+    url = site_url.lower()  # Convertir l'URL en minuscules
     qr = pyqrcode.create(url)
     qr.png("qrcode.png", scale=6)
     qr_code_image = Image.open("qrcode.png")
