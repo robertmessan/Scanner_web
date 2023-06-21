@@ -67,7 +67,7 @@ def check_website_security():
         
 def connect_to_website():
     url1 = site_url.lower()  # Convertir l'URL en minuscules
-    webbrowser.open(site_url)
+    webbrowser.open(url1)
     
 def generate_qrcode():
     url = site_url.lower()  # Convertir l'URL en minuscules
@@ -79,7 +79,7 @@ def generate_qrcode():
 
 def login_to_website():
     url2 = site_url.lower()  # Convertir l'URL en minuscules
-    webbrowser.open(site_url)
+    webbrowser.open(url2)
 
 def reset_application():
     st.session_state.qr_button_disabled = True
