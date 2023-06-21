@@ -107,7 +107,7 @@ if check_button:
     check_website_security()
 
 # Gestion des boutons
-col1, col2, col3 = st.columns(3)
+col1, col2, col = st.columns(2)
 with col1:
     qr_button = st.button("Générer QR code", key="generate_qrcode", disabled=st.session_state.get("qr_button_disabled", True))
     if qr_button:
@@ -116,10 +116,10 @@ with col2:
     connect_button = st.button("Visiter", key="connect", disabled=st.session_state.get("connect_button_disabled", True))
     if connect_button:
         connect_to_website()
-with col3:
-    login_button = st.button("Visiter le site sécurisé", key="login", disabled=st.session_state.get("login_button_disabled", True))
-    if login_button:
-        login_to_website()
+
+login_button = st.button("Visiter le site sécurisé", key="login", disabled=st.session_state.get("login_button_disabled", True))
+if login_button:
+    login_to_website()
 reset_button = st.button("Réinitialiser", key="reset")
 if reset_button:
     reset_application()
