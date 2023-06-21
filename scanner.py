@@ -65,7 +65,10 @@ def check_website_security():
         st.session_state.security_criterion_3 = False  # Critère de sécurité 3 : Certificat SSL non valide
         st.session_state.security_criterion_4 = False  # Critère de sécurité 4 : Pas de protection contre les attaques de force brute
         
-
+def connect_to_website():
+    url1 = site_url.lower()  # Convertir l'URL en minuscules
+    webbrowser.open(site_url)
+    
 def generate_qrcode():
     url = site_url.lower()  # Convertir l'URL en minuscules
     qr = pyqrcode.create(url)
@@ -73,9 +76,6 @@ def generate_qrcode():
     qr_code_image = Image.open("qrcode.png")
     st.image(qr_code_image)
 
-def connect_to_website():
-    url1 = site_url.lower()  # Convertir l'URL en minuscules
-    webbrowser.open(site_url)
 
 def login_to_website():
     url2 = site_url.lower()  # Convertir l'URL en minuscules
@@ -117,9 +117,6 @@ with col2:
     if connect_button:
         connect_to_website()
 
-login_button = st.button("Visiter le site sécurisé", key="login", disabled=st.session_state.get("login_button_disabled", True))
-if login_button:
-    login_to_website()
 reset_button = st.button("Réinitialiser", key="reset")
 if reset_button:
     reset_application()
