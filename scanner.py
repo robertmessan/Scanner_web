@@ -74,12 +74,12 @@ def generate_qrcode():
     st.image(qr_code_image)
 
 def connect_to_website():
-    url = site_url.lower()  # Convertir l'URL en minuscules
-    webbrowser.open(url)
+    url2 = site_url.lower()  # Convertir l'URL en minuscules
+    webbrowser.open_new(url)
 
 def login_to_website():
-    url = site_url.lower()  # Convertir l'URL en minuscules
-    webbrowser.open(url)
+    url1 = site_url.lower()  # Convertir l'URL en minuscules
+    webbrowser.open_new(url)
 
 def reset_application():
     st.session_state.qr_button_disabled = True
