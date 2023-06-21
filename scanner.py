@@ -79,8 +79,7 @@ def connect_to_website():
 
 def login_to_website():
     url2 = site_url.lower()  # Convertir l'URL en minuscules
-    browser=webbrowser.get()
-    browser.open(url2)
+    webbrowser.open(url2)
 
 def reset_application():
     st.session_state.qr_button_disabled = True
