@@ -73,12 +73,12 @@ def generate_qrcode():
     qr_code_image = Image.open("qrcode.png")
     st.image(qr_code_image)
 
-def connect_to_website(url1):
-    url1 = url1.lower()  # Convertir l'URL en minuscules
+def connect_to_website():
+    url1 = site_url.lower()  # Convertir l'URL en minuscules
     webbrowser.open(url1)
 
-def login_to_website(url2):
-    url2 = url2.lower()  # Convertir l'URL en minuscules
+def login_to_website():
+    url2 = site_url.lower()  # Convertir l'URL en minuscules
     webbrowser.open(url2)
 
 def reset_application():
@@ -113,13 +113,13 @@ with col1:
     if qr_button:
         generate_qrcode()
 with col2:
-    connect_button = st.button("Visiter", key="connect_to_website", disabled=st.session_state.get("connect_button_disabled", True))
+    connect_button = st.button("Visiter", key="connect", disabled=st.session_state.get("connect_button_disabled", True))
     if connect_button:
-        connect_to_website(site_url)
+        connect_to_website()
 with col3:
-    login_button = st.button("Visiter le site sécurisé", key="login_to_website", disabled=st.session_state.get("login_button_disabled", True))
+    login_button = st.button("Visiter le site sécurisé", key="login", disabled=st.session_state.get("login_button_disabled", True))
     if login_button:
-        login_to_website(site_url)
+        login_to_website()
 with col4:
     reset_button = st.button("Réinitialiser", key="reset")
     if reset_button:
