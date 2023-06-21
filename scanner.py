@@ -4,6 +4,7 @@ import pyqrcode
 from urllib.parse import urlparse
 import requests
 from PIL import Image
+import time
 
 def check_website_security():
     url = site_url.lower()  # Convertir l'URL en minuscules
@@ -72,12 +73,12 @@ def generate_qrcode():
     st.image(qr_code_image)
 
 def connect_to_website():
-    url1 = site_url.lower()  # Convertir l'URL en minuscules
-    webbrowser.open(url1)
+    url = site_url.lower()  # Convertir l'URL en minuscules
+    webbrowser.open(url)
 
 def login_to_website():
-    url2 = site_url.lower()  # Convertir l'URL en minuscules
-    webbrowser.open(url2)
+    url = site_url.lower()  # Convertir l'URL en minuscules
+    webbrowser.open(url)
 
 def reset_application():
     st.session_state.qr_button_disabled = True
@@ -90,8 +91,14 @@ def reset_application():
     st.session_state.site_url = ""
 
 #----------------------------
-st.markdown("Réalisé avec💖par Robert ")
 st.title("Smart scanner")
+st.subheader("Important")
+ phrasew = """Cette application est un prototype d'une application mobile en cours de développement.\n**Elle peut ne pas analyser certains sites. Veuillez ne considérer que des sites déclarés sécurisés avec tous les critères.\n**Veuillez noter également que ces critères ne vous rendent pas totalement invulnérable.\n**Le risque 0 n'existe pas!** **Si vous avez des propositions, n'hésitez pas à me contacter.**
+    """
+    phrase_afficheew = st.empty()
+    for i in range(len(phrasew)):
+        phrase_afficheew.markdown(phrasew[:i+1])
+        time.sleep(0.02)  # Ajouter une pause de 0.03 seconde entre chaque caractère
 # Zone de texte pour l'URL du site web
 site_url = st.text_input("URL du site web", value=st.session_state.get("site_url", ""))
 
@@ -107,11 +114,11 @@ with col1:
     if qr_button:
         generate_qrcode()
 with col2:
-    connect_button = st.button("Se connecter", key="connect", disabled=st.session_state.get("connect_button_disabled", True))
+    connect_button = st.button("Visiter", key="connect", disabled=st.session_state.get("connect_button_disabled", True))
     if connect_button:
         connect_to_website()
 with col3:
-    login_button = st.button("Se connecter au site sécurisé", key="login", disabled=st.session_state.get("login_button_disabled", True))
+    login_button = st.button("Visiter le site sécurisé", key="login", disabled=st.session_state.get("login_button_disabled", True))
     if login_button:
         login_to_website()
 with col4:
@@ -140,24 +147,7 @@ if st.session_state.get("security_criterion_4", False):
 else:
     st.error("Critère de sécurité 4 : Données interceptables")
 
-
-
-st.markdown(
-    """
-    
-    **Important!**
-    
-    
-    Cette application est un prototype d'une application mobile en cours de développement.
-    
-    **Elle peut ne pas analyser certains sites. Veuillez ne considérer que des sites déclarés sécurisés avec tous les critères.**
-    
-    Veuillez noter également que ces critères ne vous rendent pas totalement invulnérable.**Le risque 0 n'existe pas!**
-    
-    **Si vous avez des propositions, n'hésitez pas à me contacter.**
-    """
-)
-    
+st.markdown("Réalisé avec💖par Robert ")    
     
 hide_streamlit_style = """
             <style>
