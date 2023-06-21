@@ -91,12 +91,12 @@ def reset_application():
     st.session_state.site_url = ""
 
 #----------------------------
-st.title("Smart scanner")
-st.subheader("Important")
+st.markdown('<h1 style="color: green;">Smart scanner</h1>', unsafe_allow_html=True)
+st.markdown('<h2 style="color: purple;">Important🔴</h2>', unsafe_allow_html=True)
 phrasew = """Cette application est un prototype d'une application mobile en cours de développement.\n**Elle peut ne pas analyser certains sites**. Veuillez ne considérer que des sites déclarés sécurisés avec tous les critères.\nVeuillez noter également que ces critères ne vous rendent pas totalement invulnérable.\n**Le risque 0 n'existe pas!** Si vous avez des propositions, **n'hésitez pas à me contacter.** """
 phrase_afficheew = st.empty()
 for i in range(len(phrasew)):
-    phrase_afficheew.markdown(phrasew[:i+1])
+    phrase_afficheew.subheader(phrasew[:i+1])
     time.sleep(0.02)  # Ajouter une pause de 0.03 seconde entre chaque caractère
 # Zone de texte pour l'URL du site web
 site_url = st.text_input("URL du site web", value=st.session_state.get("site_url", ""))
