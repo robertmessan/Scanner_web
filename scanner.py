@@ -107,7 +107,7 @@ if check_button:
     check_website_security()
 
 # Gestion des boutons
-col1, col2, col = st.columns(2)
+col1, col2, = st.columns(2)
 with col1:
     qr_button = st.button("Générer QR code", key="generate_qrcode", disabled=st.session_state.get("qr_button_disabled", True))
     if qr_button:
