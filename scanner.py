@@ -93,8 +93,7 @@ def reset_application():
 #----------------------------
 st.title("Smart scanner")
 st.subheader("Important")
- phrasew = """Cette application est un prototype d'une application mobile en cours de développement.\n**Elle peut ne pas analyser certains sites. Veuillez ne considérer que des sites déclarés sécurisés avec tous les critères.\n**Veuillez noter également que ces critères ne vous rendent pas totalement invulnérable.\n**Le risque 0 n'existe pas!** **Si vous avez des propositions, n'hésitez pas à me contacter.**
-    """
+ phrasew = """Cette application est un prototype d'une application mobile en cours de développement.\n**Elle peut ne pas analyser certains sites. Veuillez ne considérer que des sites déclarés sécurisés avec tous les critères.\n**Veuillez noter également que ces critères ne vous rendent pas totalement invulnérable.\n**Le risque 0 n'existe pas!** **Si vous avez des propositions, n'hésitez pas à me contacter.** """
     phrase_afficheew = st.empty()
     for i in range(len(phrasew)):
         phrase_afficheew.markdown(phrasew[:i+1])
