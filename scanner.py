@@ -7,13 +7,13 @@ from PIL import Image
 import time
 
 def check_website_security():
-    url = site_url.lower()  # Convertir l'URL en minuscules
+    url = site_url.lower()  
     parsed_url = urlparse(url)
     if parsed_url.scheme == 'https':
         domain_name = parsed_url.netloc
         if domain_name.startswith("www."):
             domain_name = domain_name[4:]
-        domain_name = domain_name.rsplit('.', 1)[0]  # Supprimer les derniers caractères après le dernier point '.'
+        domain_name = domain_name.rsplit('.', 1)[0]  
 
         # Vérifier si le site web existe réellement
         try:
@@ -23,47 +23,46 @@ def check_website_security():
                 st.session_state.qr_button_disabled = False
                 st.session_state.connect_button_disabled = False
                 st.session_state.login_button_disabled = False
-                st.session_state.security_criterion_1 = True  # Critère de sécurité 1 : Site existant
-                st.session_state.security_criterion_2 = True  # Critère de sécurité 2 : Site sécurisé (HTTPS)
+                st.session_state.security_criterion_1 = True  
+                st.session_state.security_criterion_2 = True  
                 
-                # Vérifier si le site dispose d'un certificat SSL valide
                 if response.headers.get('Strict-Transport-Security') is not None:
-                    st.session_state.security_criterion_3 = True  # Critère de sécurité 3 : Certificat SSL valide
+                    st.session_state.security_criterion_3 = True  
                 else:
-                    st.session_state.security_criterion_3 = False  # Certificat SSL non valide
+                    st.session_state.security_criterion_3 = False
                 
                 # Vérifier si le site est protégé contre les attaques de force brute
                 if response.headers.get('X-Frame-Options') == 'SAMEORIGIN':
-                    st.session_state.security_criterion_4 = True  # Critère de sécurité 4 : Protection contre les attaques de force brute
+                    st.session_state.security_criterion_4 = True  
                 else:
-                    st.session_state.security_criterion_4 = False  # Pas de protection contre les attaques de force brute
+                    st.session_state.security_criterion_4 = False  
             else:
                 st.error("Nous n'avons pas pu analyser ce site. Vérifiez que l'URL saisie correspond exactement au site souhaité!")
                 st.session_state.qr_button_disabled = True
                 st.session_state.connect_button_disabled = True
                 st.session_state.login_button_disabled = True
-                st.session_state.security_criterion_1 = False  # Critère de sécurité 1 : Site non existant
-                st.session_state.security_criterion_2 = False  # Critère de sécurité 2 : Site non sécurisé
-                st.session_state.security_criterion_3 = False  # Critère de sécurité 3 : Certificat SSL non valide
-                st.session_state.security_criterion_4 = False  # Critère de sécurité 4 : Pas de protection contre les attaques de force brute
+                st.session_state.security_criterion_1 = False  
+                st.session_state.security_criterion_2 = False  
+                st.session_state.security_criterion_3 = False  
+                st.session_state.security_criterion_4 = False  
         except requests.exceptions.RequestException:
             st.error("Nous n'avons pas réussi à analyser ce site! Soit il a déjà été signalé comme faux site web, soit il est hébergé en tant que site personnel. Veuillez vous assurer que l'orthographe est correcte.")
             st.session_state.qr_button_disabled = True
             st.session_state.connect_button_disabled = True
             st.session_state.login_button_disabled = True
-            st.session_state.security_criterion_1 = False  # Critère de sécurité 1 : Site non existant
-            st.session_state.security_criterion_2 = False  # Critère de sécurité 2 : Site non sécurisé
-            st.session_state.security_criterion_3 = False  # Critère de sécurité 3 : Certificat SSL non valide
-            st.session_state.security_criterion_4 = False  # Critère de sécurité 4 : Pas de protection contre les attaques de force brute
+            st.session_state.security_criterion_1 = False  
+            st.session_state.security_criterion_2 = False  
+            st.session_state.security_criterion_3 = False  
+            st.session_state.security_criterion_4 = False  
     else:
         st.error("Site non sécurisé ! Veuillez utiliser 'https' au début de votre URL.")
         st.session_state.qr_button_disabled = True
         st.session_state.connect_button_disabled = True
         st.session_state.login_button_disabled = True
-        st.session_state.security_criterion_1 = False  # Critère de sécurité 1 : Site non existant
-        st.session_state.security_criterion_2 = False  # Critère de sécurité 2 : Site non sécurisé
-        st.session_state.security_criterion_3 = False  # Critère de sécurité 3 : Certificat SSL non valide
-        st.session_state.security_criterion_4 = False  # Critère de sécurité 4 : Pas de protection contre les attaques de force brute
+        st.session_state.security_criterion_1 = False  
+        st.session_state.security_criterion_2 = False  
+        st.session_state.security_criterion_3 = False  
+        st.session_state.security_criterion_4 = False  
         
 def connect_to_website():
     url1 = site_url.lower()  # Convertir l'URL en minuscules
